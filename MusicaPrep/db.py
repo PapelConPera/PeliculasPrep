@@ -3,7 +3,6 @@ import sqlite3
 import click
 from flask import current_app, g
 
-db_name = 'datosMusica.sql'
 
 def get_db():
     if 'db' not in g:
@@ -25,7 +24,7 @@ def close_db(e=None):
 def init_db():
     db = get_db()
 
-    with current_app.open_resource('schema.sql') as f:
+    with current_app.open_resource('datosMusica.sql') as f:
         db.executescript(f.read().decode('utf8'))
 
 
