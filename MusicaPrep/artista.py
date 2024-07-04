@@ -14,6 +14,9 @@ def index():
             FROM artists
             ORDER BY name"""
     ).fetchall()
+
+
+    
     return render_template('artistas.html', artista=lista_artistas)
 
 

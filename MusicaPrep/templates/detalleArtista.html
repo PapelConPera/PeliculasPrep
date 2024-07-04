@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 {% block header %}
-  <h1>{% block title %}Albums:{% endblock %}</h1>
+  <h1>{% block title %}Artistas:{% endblock %}</h1>
   {% if g.user %}
     <a class="action" href="{{ url_for('blog.create') }}">New</a>
   {% endif %}
@@ -8,11 +8,9 @@
 
 {% block content %}
 <ul>  
-{% for alb in albun %}
-
-  <li><a class="action" href="{{ url_for('albun.detalle', id=alb['AlbumId']) }}">
-      {{ alb['Title'] }}</a></li>
-
+{% for art in artista %}
+    
+        <li><h4>{{ art['name'] }}</h4></li>
       
   {% endfor %}
 </ul> 

@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% block header %}
+  <h1>{% block title %}{{ album['Title'] }}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<ul>  
+{% for can in cancion %}
+
+  <li>
+      {{ can['name'] }}</li>
+
+      
+  {% endfor %}
+</ul> 
+{% endblock %}

@@ -6,8 +6,7 @@ html {
 body { 
     max-width: 960px;
      margin: 0 auto;
-      background: white;
-    }
+      }
 h4 { 
     font-family: serif;
     color: #377ba8;
@@ -112,3 +111,37 @@ table {
     margin-bottom: 20px;
     border-collapse: collapse;
   }
+
+  body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 70%; /* Ajusta el ancho de la tabla según sea necesario */
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid #000000;
+    padding: 8px;
+}
+
+th {
+    background-color: #3e86b6;
+    font-weight: bold;
+}
+
+
+
+

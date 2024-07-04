@@ -15,3 +15,21 @@ def index():
             ORDER BY name,composer"""
     ).fetchall()
     return render_template('pista.html', pista=lista_pistas)
+
+@bp.route('/<int:id>/')
+def update(id):
+    db = get_db()
+    lista_pistas = db.execute(
+        """SELECT Title
+            FROM albums
+            ORDER BY Title"""
+    ).fetchall()
+
+
+    lista_nombreADefinir = db.execute(
+        """SELECT name,composer
+            FROM tracks
+            ORDER BY name,composer"""
+    ).fetchall()
+
+    return render_template('blog/update.html', post=post)
