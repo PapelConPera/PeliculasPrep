@@ -21,13 +21,15 @@ def index():
 def detalle(id):
     db = get_db()
     consulta1 = """
-    SELECT Title, AlbumId FROM albums
-            WHERE AlbumId = ?"""
+    SELECT Title, AlbumId 
+    FROM albums
+    WHERE AlbumId = ?"""
 
     resultado = db.execute(consulta1, (id,))
     lista_albums = resultado.fetchone()
 
-    consulta2 = """SELECT name, AlbumId
+    consulta2 = """  
+            SELECT name, AlbumId
             FROM tracks
             WHERE AlbumId = ?"""
     

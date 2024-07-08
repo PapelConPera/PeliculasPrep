@@ -1,17 +1,21 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 {% block header %}
-  <h1>{% block title %}Artistas:{% endblock %}</h1>
-  {% if g.user %}
-    <a class="action" href="{{ url_for('blog.create') }}">New</a>
-  {% endif %}
-{% endblock %}
+<h1>{% block title %}Artistas:{% endblock %}</h1>
+{% if g.user %}
+<a class="action" href="{{ url_for('blog.create') }}">New</a>
+{% endif %} {% endblock %} {% block content %}
+<ul>
+  {% for art in artista %}
 
-{% block content %}
-<ul>  
-{% for art in artista %}
-    
-        <li><h4>{{ art['name'] }}</h4></li>
-      
+  <li>
+    <a
+      class="action"
+      href="{{ url_for('artista.detalle', id=art['ArtistId']) }}"
+    >
+      {{ art['name'] }}</a
+    >
+  </li>
+
   {% endfor %}
-</ul> 
+</ul>
 {% endblock %}
